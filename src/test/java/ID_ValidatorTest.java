@@ -33,6 +33,11 @@ public class ID_ValidatorTest {
     }
 
     @Test
+    public void InValid_too_short_ID_test() {
+        assertFalse(validator.validate("Nrx 30020"));
+    }
+
+    @Test
     public void InValidID_test() {
         assertFalse(validator.validate("NRX222333"));
     }

@@ -22,12 +22,19 @@ public class ID_Validator implements Validator {
     public boolean validate(String id_number) {
         int control_sum = 0;
         id_number = id_number.replaceAll("[- ]", "").toUpperCase();
-        if (id_number.length() != POINTS.length || !id_number.matches("^[A-Z]{3}[0-9]{6}$")) return false;
 
-        for (int i = 0; i < id_number.length(); i++) {
+        if (isCorrectID(id_number)) {
+            for (int i = 0; i < id_number.length(); i++) {
                 control_sum += signMap.get(id_number.charAt(i)) * POINTS[i];
+            }
+        } else {
+            control_sum = 1;
         }
         return control_sum % 10 == 0;
+    }
+
+    private boolean isCorrectID(String id_number) {
+        return id_number.matches("^[A-Z]{3}[0-9]{6}$");
     }
 
     @Override
