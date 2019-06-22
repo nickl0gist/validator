@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class ID_Validator implements Validator {
 
-    String type = "ID number";
+    private String type = "ID number";
 
     private Map<Character, Integer> signMap = new HashMap<>();
     private int[] points = {7, 3, 1, 9, 7, 3, 1, 7, 3};
