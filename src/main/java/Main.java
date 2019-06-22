@@ -22,7 +22,7 @@ public class Main implements Runnable {
             if (validator.validate(document_number)){
                 System.out.println("This is correct " + validator.getType());
             } else {
-                System.out.println("This " + validator.getType() + "is incorrect.");
+                System.out.println("This " + validator.getType() + " is incorrect.");
             }
         }
     }
