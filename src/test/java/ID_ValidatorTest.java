@@ -34,21 +34,21 @@ public class ID_ValidatorTest {
 
     @Test
     public void InValidID_test(){
-        assertTrue(validator.validate("NRX222333"));
+        assertFalse(validator.validate("NRX222333"));
     }
 
     @Test
     public void InValidID_with_space_test(){
-        assertTrue(validator.validate("NRX 222333"));
+        assertFalse(validator.validate("NRX 222333"));
     }
 
     @Test
     public void InValidID_with_dash_test(){
-        assertTrue(validator.validate("NRX-222333"));
+        assertFalse(validator.validate("NRX-222333"));
     }
 
     @Test
     public void InValidID_case_sensitive_test(){
-        assertTrue(validator.validate("Nrx222333"));
+        assertFalse(validator.validate("Nrx222333"));
     }
 }
