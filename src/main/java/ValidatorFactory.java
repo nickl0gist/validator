@@ -2,7 +2,7 @@ public class ValidatorFactory {
 
     public Validator getValidator(String stringToCheck) {
         String strippedStr = stringToCheck.replaceAll("[- ]", "");
-        switch (stringToCheck.length()) {
+        switch (strippedStr.length()) {
             case 9:
                 return new ID_Validator();
             case 11:
