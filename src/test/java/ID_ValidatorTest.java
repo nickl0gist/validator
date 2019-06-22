@@ -51,4 +51,14 @@ public class ID_ValidatorTest {
     public void InValidID_case_sensitive_test(){
         assertFalse(validator.validate("Nrx222333"));
     }
+
+    @Test
+    public void InValidID_regex_test(){
+        assertFalse(validator.validate("nR5 300202"));
+    }
+
+    @Test
+    public void ValidID_regex_test(){
+        assertTrue(validator.validate("NRX 300202"));
+    }
 }
