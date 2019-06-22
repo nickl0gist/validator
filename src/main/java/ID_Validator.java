@@ -52,4 +52,9 @@ public class ID_Validator implements Validator {
         }
         return control_sum % 10 == 0;
     }
+
+    @Override
+    public String getType() {
+        return type;
+    }
 }

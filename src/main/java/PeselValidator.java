@@ -22,4 +22,9 @@ public class PeselValidator implements Validator {
         }
         return control_sum % 10 == Character.getNumericValue(id_number.charAt(10));
     }
+
+    @Override
+    public String getType() {
+        return type;
+    }
 }

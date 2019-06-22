@@ -26,4 +26,9 @@ public class CreditCardValidator implements Validator {
         }
         return sum % 10 == control_sum;
     }
+
+    @Override
+    public String getType() {
+        return type;
+    }
 }

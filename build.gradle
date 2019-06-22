@@ -11,6 +11,10 @@ repositories {
     mavenCentral()
 }
 
+apply plugin:'application'
+mainClassName = "Main"
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'info.picocli:picocli:3.9.6'
 }
