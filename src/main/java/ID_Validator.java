@@ -42,18 +42,14 @@ public class ID_Validator implements Validator {
     @Override
     public boolean validate(String id_number) {
         int control_sum = 0;
-
         id_number = id_number.replaceAll("[- ]", "").toUpperCase();
         if (id_number.length() != points.length || !id_number.matches("^[A-Z]{3}[0-9]{6}$")) return false;
-
         for (int i = 0; i < id_number.length(); i++) {
-            if (i < 3) {
+            if (i < 3)
                 control_sum += signMap.get(id_number.charAt(i)) * points[i];
-            } else {
+             else
                 control_sum += Character.getNumericValue(id_number.charAt(i)) * points[i];
-            }
         }
-
         return control_sum % 10 == 0;
     }
 }
